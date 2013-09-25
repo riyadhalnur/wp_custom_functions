@@ -1,0 +1,12 @@
+# Useful functions for WP themes  
+
+This is a small file consisting of useful functions to be included in the functions.php file of your WordPress theme. Just include this file in your functions.php file.   
+
+## Usage  
+Include the file in your functions.php file.    
+    ```include (TEMPLATEPATH . '/inc/custom-functions.php');```   
+You can also replace _include_ with _require_  
+
+Follow me on [twitter](https://twitter.com/riyadhalnur),  [LinkedIn](http://www.linkedin.com/riyadhalnur),  [Google+](http://plus.google.com/riyadhalnur) or [Facebook](http://www.facebook.com/riyadhalnur) or visit my [site](http://www.verticalaxisbd.com).  
+
+Copyright &copy; 2013 Riyadh Al Nur. All rights reserved.
