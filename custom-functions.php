@@ -82,11 +82,11 @@ if ( !current_user_can( 'update_plugins' ) ) {
 }
 
 // remove version info from head and feeds for security
-function complete_version_removal() {
-	return '';
+function version_removal() {
+	return ' ';
 }
 
-add_filter( 'the_generator', 'complete_version_removal' );
+add_filter( 'the_generator', 'version_removal' );
 
 // add feed links to header
 if (function_exists('automatic_feed_links')) {
@@ -136,4 +136,24 @@ function get_first_category_ID() {
 	$category = get_the_category();
 	return $category[0]->cat_ID;
 }
+
+//stop pinging yourself to reduce site load
+function stop_self_ping( &$links ) {
+	$home = get_option( 'home' );
+	foreach ( $links as $l => $link )
+	if ( 0 === strpos( $link, $home ) )
+	unset($links[$l]);
+}
+add_action( 'pre_ping', 'stop_self_ping' );
+
+// add site load time, DB queries, memory comsumption to admin footer
+function perf( $visible = false ) {
+	$results = sprintf( '%d queries took %.3f seconds, and used %.2fMB of memory.',
+		get_num_queries(),
+		timer_stop( 0, 3 ),
+		memory_get_peak_usage() / 1024 / 1024
+		);
+	echo $visible ? $results : "<!-- {$results} -->" ;
+}
+add_action( 'admin_footer', 'perf', 20 );
 ?>
