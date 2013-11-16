@@ -153,7 +153,7 @@ function perf( $visible = false ) {
 		timer_stop( 0, 3 ),
 		memory_get_peak_usage() / 1024 / 1024
 		);
-	echo $visible ? $results : "<!-- {$results} -->" ;
+	echo $visible ? $results : "Statistics: {$results}" ;
 }
-add_action( 'admin_footer', 'perf', 20 );
+add_action( 'admin_footer_text', 'perf', 20 );
 ?>
