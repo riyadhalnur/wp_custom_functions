@@ -13,3 +13,7 @@ Copyright &copy; 2013 Riyadh Al Nur. All rights reserved.
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/riyadhalnur/wp_custom_functions/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/riyadhalnur/wp_custom_functions/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
